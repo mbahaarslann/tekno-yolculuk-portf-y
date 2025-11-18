@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Linkedin, Github, ChevronDown } from "lucide-react";
+import { Navigation } from "@/components/Navigation";
+import { projects } from "@/data/projects";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const scrollToSection = (id: string) => {
@@ -11,23 +14,6 @@ const Index = () => {
     }
   };
 
-  const projects = [
-    {
-      title: "Otonom Hedef Takibi (Raspberry Pi)",
-      description: "Görüntü işleme teknikleri kullanılarak, belirlenen hedefi otonom olarak takip edebilen bir araç prototipi.",
-      tags: ["IoT", "Görüntü İşleme", "Donanım"],
-    },
-    {
-      title: "Lojistikte B2B Dijitalleşme",
-      description: "Lojistik sektörünün en büyük verimsizliği olan 'boş araç/boş dönüş' sorununu çözmeye yönelik dijital platform ve iş modeli tasarımı.",
-      tags: ["İş Analizi", "Süreç İyileştirme", "Platform Tasarımı"],
-    },
-    {
-      title: "Fiyatlandırma Karar Destek Sistemi",
-      description: "İşletmelerin uzun vadeli fiyat stratejilerini belirlemelerine yardımcı olan, veriye dayalı karar destek sistemi modeli.",
-      tags: ["Veri Analizi", "KDS", "Stratejik Planlama"],
-    },
-  ];
 
   const skills = [
     "Proje Yönetimi",
@@ -40,8 +26,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
+      <section className="relative min-h-screen flex items-center justify-center px-4 py-20 pt-24">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
         <div className="container max-w-4xl mx-auto text-center relative z-10">
           <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
@@ -103,25 +90,27 @@ const Index = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
-              <Card key={index} className="group">
-                <CardHeader>
-                  <CardTitle className="text-xl group-hover:gradient-text-primary transition-all duration-300">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription className="text-base pt-2">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant={tagIndex % 2 === 0 ? "default" : "accent"}>
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <Link key={project.id} to={`/projeler/${project.id}`}>
+                <Card className="group cursor-pointer h-full">
+                  <CardHeader>
+                    <CardTitle className="text-xl group-hover:gradient-text-primary transition-all duration-300">
+                      {project.title}
+                    </CardTitle>
+                    <CardDescription className="text-base pt-2">
+                      {project.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag, tagIndex) => (
+                        <Badge key={tagIndex} variant={tagIndex % 2 === 0 ? "default" : "accent"}>
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
