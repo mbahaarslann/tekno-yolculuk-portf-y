@@ -18,72 +18,78 @@ const ProjeDetay = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <main className="pt-24 pb-20 px-4">
-        <div className="container max-w-5xl mx-auto">
+      <main className="pt-32 pb-20 px-4">
+        <div className="container max-w-6xl mx-auto">
           <Link to="/">
-            <Button variant="ghost" className="mb-8">
-              <ArrowLeft className="w-4 h-4 mr-2" />
+            <Button variant="ghost" className="mb-8 group">
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
               Ana Sayfaya Dön
             </Button>
           </Link>
 
           {/* Project Header */}
-          <div className="mb-12 space-y-6">
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-16 space-y-8 text-center">
+            <div className="flex flex-wrap gap-3 justify-center">
               {project.tags.map((tag, index) => (
-                <Badge key={index} variant={index % 2 === 0 ? "default" : "accent"}>
+                <Badge key={index} variant={index % 2 === 0 ? "default" : "accent"} className="text-sm">
                   {tag}
                 </Badge>
               ))}
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold gradient-text-primary">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text-primary leading-tight max-w-4xl mx-auto">
               {project.title}
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto">
               {project.fullDescription}
             </p>
           </div>
 
           {/* Project Details */}
-          <div className="grid gap-6">
+          <div className="grid gap-8">
             {/* Challenges */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl">
-                  <Target className="w-6 h-6 text-primary" />
-                  Zorluklar ve Sorunlar
-                </CardTitle>
+            <Card className="hover-lift">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="h-14 w-14 rounded-2xl gradient-primary flex items-center justify-center shadow-glow-blue">
+                    <Target className="w-7 h-7 text-white" />
+                  </div>
+                  <CardTitle className="text-2xl md:text-3xl">Zorluklar ve Sorunlar</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">{project.challenges}</p>
+                <p className="text-foreground/80 leading-relaxed text-lg">{project.challenges}</p>
               </CardContent>
             </Card>
 
             {/* Solutions */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl">
-                  <Lightbulb className="w-6 h-6 text-accent" />
-                  Çözümler ve Yaklaşımlar
-                </CardTitle>
+            <Card className="hover-lift">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="h-14 w-14 rounded-2xl gradient-accent flex items-center justify-center shadow-glow-orange">
+                    <Lightbulb className="w-7 h-7 text-white" />
+                  </div>
+                  <CardTitle className="text-2xl md:text-3xl">Çözümler ve Yaklaşımlar</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">{project.solutions}</p>
+                <p className="text-foreground/80 leading-relaxed text-lg">{project.solutions}</p>
               </CardContent>
             </Card>
 
             {/* Technologies */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl">
-                  <Wrench className="w-6 h-6 text-primary" />
-                  Kullanılan Teknolojiler
-                </CardTitle>
+            <Card className="hover-lift">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="h-14 w-14 rounded-2xl gradient-primary flex items-center justify-center shadow-glow-blue">
+                    <Wrench className="w-7 h-7 text-white" />
+                  </div>
+                  <CardTitle className="text-2xl md:text-3xl">Kullanılan Teknolojiler</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {project.technologies.map((tech, index) => (
-                    <Badge key={index} variant="outline" className="text-base py-2 px-4">
+                    <Badge key={index} variant="outline" className="text-base py-2 px-5">
                       {tech}
                     </Badge>
                   ))}
@@ -92,24 +98,26 @@ const ProjeDetay = () => {
             </Card>
 
             {/* Outcomes */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl">
-                  <TrendingUp className="w-6 h-6 text-accent" />
-                  Sonuçlar ve Etkiler
-                </CardTitle>
+            <Card className="hover-lift">
+              <CardHeader className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="h-14 w-14 rounded-2xl gradient-accent flex items-center justify-center shadow-glow-orange">
+                    <TrendingUp className="w-7 h-7 text-white" />
+                  </div>
+                  <CardTitle className="text-2xl md:text-3xl">Sonuçlar ve Etkiler</CardTitle>
+                </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed">{project.outcomes}</p>
+                <p className="text-foreground/80 leading-relaxed text-lg">{project.outcomes}</p>
               </CardContent>
             </Card>
           </div>
 
           {/* Back to Projects */}
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
             <Link to="/">
-              <Button variant="outline" size="lg">
-                <ArrowLeft className="w-4 h-4 mr-2" />
+              <Button variant="outline" size="lg" className="group">
+                <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
                 Diğer Projeleri Gör
               </Button>
             </Link>

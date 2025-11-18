@@ -28,75 +28,116 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 py-20 pt-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
-        <div className="container max-w-4xl mx-auto text-center relative z-10">
-          <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-              <span className="gradient-text-primary">Yönetim Bilişim Sistemleri</span>
-              <br />
-              <span className="text-foreground">Öğrencisi</span>
+      <section className="relative min-h-screen flex items-center justify-center px-4 py-20 pt-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/5" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+        
+        <div className="container max-w-5xl mx-auto text-center relative z-10">
+          <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect border border-primary/20 mb-4">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              </span>
+              <span className="text-sm font-semibold text-primary">Generalist & Tech Enthusiast</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-tight">
+              <span className="gradient-text-primary block mb-2">Yönetim Bilişim</span>
+              <span className="gradient-text-accent block">Sistemleri Öğrencisi</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+            
+            <p className="text-xl md:text-2xl lg:text-3xl font-medium text-foreground/90 max-w-3xl mx-auto leading-relaxed">
               Teknoloji & İnovasyon Tutkunu
             </p>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              İş dünyasının problemlerine; yazılım, veri ve donanım tabanlı yaratıcı çözümler geliştiriyorum.
+            
+            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
+              İş dünyasının problemlerine; <span className="text-primary font-semibold">yazılım</span>, <span className="text-primary font-semibold">veri</span> ve <span className="text-accent font-semibold">donanım</span> tabanlı yaratıcı çözümler geliştiriyorum.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <Button
                 size="lg"
                 variant="hero"
                 onClick={() => scrollToSection("projects")}
+                className="group"
               >
                 Projelerimi İncele
+                <ChevronDown className="w-4 h-4 ml-1 group-hover:translate-y-1 transition-transform" />
               </Button>
               <Button
                 size="lg"
                 variant="accent"
                 onClick={() => scrollToSection("contact")}
               >
-                İletişim
+                İletişime Geç
               </Button>
             </div>
           </div>
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-            <ChevronDown className="w-8 h-8 text-primary" />
+          
+          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
+            <div className="flex flex-col items-center gap-2 text-muted-foreground">
+              <span className="text-xs font-medium">Keşfet</span>
+              <ChevronDown className="w-5 h-5 text-primary" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4">
-        <div className="container max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 gradient-text-primary">
-            Hakkımda
-          </h2>
-          <div className="bg-card border border-border rounded-xl p-8 shadow-card">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Yönetim Bilişim Sistemleri 3. sınıf öğrencisiyim. Henüz kendimi tek bir teknoloji veya alanla sınırlamıyorum. 
-              Donanım projelerinden iş süreçleri dijitalleşmesine, veri analizinden karar destek sistemlerine kadar teknolojinin 
-              farklı uçlarını deneyimliyor ve gerçek hayat problemlerine çözüm üretmekten keyif alıyorum.
-            </p>
+      <section id="about" className="py-32 px-4 relative">
+        <div className="container max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text-primary inline-block">
+              Hakkımda
+            </h2>
+            <div className="h-1 w-24 mx-auto gradient-primary rounded-full" />
+          </div>
+          
+          <div className="glass-effect rounded-3xl p-8 md:p-12 shadow-elevated border-primary/10 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative z-10">
+              <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-6">
+                Yönetim Bilişim Sistemleri 3. sınıf öğrencisiyim. Henüz kendimi tek bir teknoloji veya alanla sınırlamıyorum.
+              </p>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                <span className="text-primary font-semibold">Donanım projelerinden</span> iş süreçleri dijitalleşmesine, 
+                <span className="text-primary font-semibold"> veri analizinden</span> karar destek sistemlerine kadar teknolojinin 
+                farklı uçlarını deneyimliyor ve <span className="text-accent font-semibold">gerçek hayat problemlerine</span> çözüm üretmekten keyif alıyorum.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 bg-gradient-to-b from-background to-card/20">
-        <div className="container max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 gradient-text-accent text-center">
-            Projelerim
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section id="projects" className="py-32 px-4 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent" />
+        <div className="container max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text-accent inline-block">
+              Projelerim
+            </h2>
+            <div className="h-1 w-24 mx-auto gradient-accent rounded-full" />
+            <p className="text-muted-foreground mt-6 text-lg">Farklı alanlarda geliştirdiğim çözümler</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <Link key={project.id} to={`/projeler/${project.id}`}>
-                <Card className="group cursor-pointer h-full">
-                  <CardHeader>
-                    <CardTitle className="text-xl group-hover:gradient-text-primary transition-all duration-300">
+                <Card className="group cursor-pointer h-full hover-lift">
+                  <CardHeader className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="h-12 w-12 rounded-xl gradient-primary flex items-center justify-center shadow-glow-blue">
+                        <span className="text-2xl font-bold text-white">{index + 1}</span>
+                      </div>
+                      <ChevronDown className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+                    </div>
+                    <CardTitle className="text-xl md:text-2xl group-hover:gradient-text-primary transition-all duration-300 leading-snug">
                       {project.title}
                     </CardTitle>
-                    <CardDescription className="text-base pt-2">
+                    <CardDescription className="text-base leading-relaxed">
                       {project.description}
                     </CardDescription>
                   </CardHeader>
@@ -117,28 +158,43 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4">
-        <div className="container max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 gradient-text-primary text-center">
-            Yetenekler ve İlgi Alanları
-          </h2>
-          <div className="flex flex-wrap gap-3 justify-center">
-            {skills.map((skill, index) => (
-              <Badge key={index} variant="outline" className="text-base py-2 px-4">
-                {skill}
-              </Badge>
-            ))}
+      <section id="skills" className="py-32 px-4">
+        <div className="container max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text-primary inline-block">
+              Yetenekler ve İlgi Alanları
+            </h2>
+            <div className="h-1 w-24 mx-auto gradient-primary rounded-full" />
+          </div>
+          
+          <div className="glass-effect rounded-3xl p-8 md:p-12 shadow-elevated border-primary/10">
+            <div className="flex flex-wrap gap-4 justify-center">
+              {skills.map((skill, index) => (
+                <Badge 
+                  key={index} 
+                  variant="outline" 
+                  className="text-sm md:text-base py-3 px-6 hover:scale-110 transition-transform duration-300 cursor-default"
+                >
+                  {skill}
+                </Badge>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Footer / Contact Section */}
-      <footer id="contact" className="py-20 px-4 bg-card/50 border-t border-border">
-        <div className="container max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 gradient-text-accent">
-            İletişim
-          </h2>
-          <div className="flex gap-6 justify-center mb-8">
+      <footer id="contact" className="py-32 px-4 bg-gradient-to-t from-card/30 to-transparent border-t border-border/50">
+        <div className="container max-w-5xl mx-auto text-center">
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text-accent inline-block">
+              İletişim
+            </h2>
+            <div className="h-1 w-24 mx-auto gradient-accent rounded-full" />
+            <p className="text-muted-foreground mt-6 text-lg">Birlikte harika projeler geliştirelim</p>
+          </div>
+          
+          <div className="flex gap-6 justify-center mb-12">
             <a
               href="https://linkedin.com"
               target="_blank"
@@ -146,8 +202,8 @@ const Index = () => {
               className="group"
               aria-label="LinkedIn"
             >
-              <div className="p-4 rounded-full bg-primary/10 border border-primary/20 hover:bg-primary/20 hover:shadow-glow-blue transition-all duration-300">
-                <Linkedin className="w-6 h-6 text-primary" />
+              <div className="p-6 rounded-2xl glass-effect border border-primary/20 hover:border-primary/50 hover:shadow-glow-blue transition-all duration-400 hover:scale-110">
+                <Linkedin className="w-7 h-7 text-primary" />
               </div>
             </a>
             <a
@@ -157,8 +213,8 @@ const Index = () => {
               className="group"
               aria-label="GitHub"
             >
-              <div className="p-4 rounded-full bg-primary/10 border border-primary/20 hover:bg-primary/20 hover:shadow-glow-blue transition-all duration-300">
-                <Github className="w-6 h-6 text-primary" />
+              <div className="p-6 rounded-2xl glass-effect border border-primary/20 hover:border-primary/50 hover:shadow-glow-blue transition-all duration-400 hover:scale-110">
+                <Github className="w-7 h-7 text-primary" />
               </div>
             </a>
             <a
@@ -166,12 +222,15 @@ const Index = () => {
               className="group"
               aria-label="Email"
             >
-              <div className="p-4 rounded-full bg-accent/10 border border-accent/20 hover:bg-accent/20 hover:shadow-glow-orange transition-all duration-300">
-                <Mail className="w-6 h-6 text-accent" />
+              <div className="p-6 rounded-2xl glass-effect border border-accent/20 hover:border-accent/50 hover:shadow-glow-orange transition-all duration-400 hover:scale-110">
+                <Mail className="w-7 h-7 text-accent" />
               </div>
             </a>
           </div>
-          <p className="text-muted-foreground">© 2025</p>
+          
+          <div className="pt-8 border-t border-border/30">
+            <p className="text-muted-foreground text-sm">© 2025 • Tüm hakları saklıdır</p>
+          </div>
         </div>
       </footer>
     </div>
