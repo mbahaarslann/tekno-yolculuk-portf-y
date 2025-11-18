@@ -15,10 +15,10 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-      <div className="container max-w-6xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="text-xl font-bold gradient-text-primary">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border/50">
+      <div className="container max-w-7xl mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          <Link to="/" className="text-xl md:text-2xl font-bold gradient-text-primary hover:scale-105 transition-transform duration-300">
             YBS Portfolio
           </Link>
 

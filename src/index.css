@@ -8,52 +8,59 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark theme with deep charcoal background */
-    --background: 220 20% 8%;
-    --foreground: 210 20% 98%;
+    /* Premium dark theme */
+    --background: 222 20% 7%;
+    --foreground: 210 40% 98%;
 
-    --card: 220 18% 12%;
-    --card-foreground: 210 20% 98%;
+    --card: 220 18% 10%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 220 18% 12%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Electric blue as primary accent */
-    --primary: 210 100% 56%;
-    --primary-foreground: 210 20% 98%;
+    /* Vibrant cyan-blue primary */
+    --primary: 195 100% 50%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 195 100% 65%;
 
-    /* Darker card variant */
-    --secondary: 220 16% 16%;
-    --secondary-foreground: 210 20% 98%;
+    /* Rich secondary */
+    --secondary: 220 16% 14%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 220 15% 20%;
-    --muted-foreground: 210 10% 65%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 210 15% 60%;
 
-    /* Sunset orange as accent */
-    --accent: 25 95% 58%;
-    --accent-foreground: 220 20% 8%;
+    /* Vibrant orange-coral accent */
+    --accent: 15 90% 60%;
+    --accent-foreground: 220 20% 7%;
+    --accent-glow: 15 100% 70%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 210 100% 56%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 195 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Gradient definitions */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(190 100% 50%));
-    --gradient-accent: linear-gradient(135deg, hsl(25 95% 58%), hsl(15 90% 55%));
-    --gradient-subtle: linear-gradient(180deg, hsl(220 20% 8%), hsl(220 18% 12%));
+    /* Premium gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(210 100% 55%) 50%, hsl(225 100% 60%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(15 90% 60%) 0%, hsl(30 95% 65%) 50%, hsl(45 100% 70%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(222 20% 7%) 0%, hsl(220 18% 10%) 100%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsla(195, 100%, 50%, 0.15) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsla(15, 90%, 60%, 0.1) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsla(225, 100%, 60%, 0.1) 0px, transparent 50%);
 
-    /* Shadows with glow effect */
-    --shadow-glow-blue: 0 0 40px hsla(210, 100%, 56%, 0.3);
-    --shadow-glow-orange: 0 0 40px hsla(25, 95%, 58%, 0.3);
-    --shadow-card: 0 10px 30px -10px hsla(220, 20%, 0%, 0.5);
+    /* Enhanced shadows */
+    --shadow-glow-blue: 0 0 60px hsla(195, 100%, 50%, 0.4), 0 0 100px hsla(195, 100%, 50%, 0.2);
+    --shadow-glow-orange: 0 0 60px hsla(15, 90%, 60%, 0.4), 0 0 100px hsla(15, 90%, 60%, 0.2);
+    --shadow-card: 0 20px 50px -10px hsla(220, 20%, 0%, 0.6);
+    --shadow-elevated: 0 30px 60px -15px hsla(220, 20%, 0%, 0.7);
 
     /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 }
 
@@ -63,7 +70,9 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    background-image: var(--gradient-mesh);
+    background-attachment: fixed;
   }
 
   html {
@@ -104,5 +113,24 @@ All colors MUST be HSL.
 
   .shadow-card {
     box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elevated);
   }
 }
