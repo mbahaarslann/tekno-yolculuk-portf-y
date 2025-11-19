@@ -43,9 +43,9 @@ const Index = () => {
               <span className="text-sm font-semibold text-primary">Generalist & Tech Enthusiast</span>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-tight">
-              <span className="gradient-text-primary block mb-2">Yönetim Bilişim</span>
-              <span className="gradient-text-accent block">Sistemleri Öğrencisi</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[1.4] pb-8 md:pb-12">
+              <span className="gradient-text-primary block mb-4 pb-1">Yönetim Bilişim</span>
+              <span className="gradient-text-accent block pt-2">Sistemleri Öğrencisi</span>
             </h1>
             
             <p className="text-xl md:text-2xl lg:text-3xl font-medium text-foreground/90 max-w-3xl mx-auto leading-relaxed">
@@ -76,12 +76,6 @@ const Index = () => {
             </div>
           </div>
           
-          <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
-            <div className="flex flex-col items-center gap-2 text-muted-foreground">
-              <span className="text-xs font-medium">Keşfet</span>
-              <ChevronDown className="w-5 h-5 text-primary" />
-            </div>
-          </div>
         </div>
       </section>
 
@@ -89,7 +83,7 @@ const Index = () => {
       <section id="about" className="py-32 px-4 relative">
         <div className="container max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text-primary inline-block">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text-primary inline-block leading-[1.3] pb-3">
               Hakkımda
             </h2>
             <div className="h-1 w-24 mx-auto gradient-primary rounded-full" />
@@ -116,7 +110,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent" />
         <div className="container max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text-accent inline-block">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text-accent inline-block leading-[1.3] pb-3">
               Projelerim
             </h2>
             <div className="h-1 w-24 mx-auto gradient-accent rounded-full" />
@@ -161,7 +155,7 @@ const Index = () => {
       <section id="skills" className="py-32 px-4">
         <div className="container max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text-primary inline-block">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text-primary inline-block leading-[1.3] pb-3">
               Yetenekler ve İlgi Alanları
             </h2>
             <div className="h-1 w-24 mx-auto gradient-primary rounded-full" />
@@ -187,7 +181,7 @@ const Index = () => {
       <footer id="contact" className="py-32 px-4 bg-gradient-to-t from-card/30 to-transparent border-t border-border/50">
         <div className="container max-w-5xl mx-auto text-center">
           <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text-accent inline-block">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 gradient-text-accent inline-block leading-[1.3] pb-3">
               İletişim
             </h2>
             <div className="h-1 w-24 mx-auto gradient-accent rounded-full" />
@@ -196,7 +190,7 @@ const Index = () => {
           
           <div className="flex gap-6 justify-center mb-12">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/muhammed-baha-arslan-1b5475293/"
               target="_blank"
               rel="noopener noreferrer"
               className="group"
@@ -207,7 +201,7 @@ const Index = () => {
               </div>
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/mbahaarslan"
               target="_blank"
               rel="noopener noreferrer"
               className="group"
@@ -218,7 +212,7 @@ const Index = () => {
               </div>
             </a>
             <a
-              href="mailto:example@email.com"
+              href="m.bahaarslan0@gmail.com"
               className="group"
               aria-label="Email"
             >
