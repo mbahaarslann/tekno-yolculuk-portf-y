@@ -32,7 +32,7 @@ const YaziDetay = () => {
               <Badge variant="default" className="text-sm shadow-glow-blue">
                 {post.category}
               </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text-accent leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text-accent leading-[1.3] pb-6">
                 {post.title}
               </h1>
               <div className="flex items-center justify-center gap-6 text-muted-foreground">
