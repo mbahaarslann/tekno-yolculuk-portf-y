@@ -36,7 +36,7 @@ const ProjeDetay = () => {
                 </Badge>
               ))}
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text-primary leading-tight max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text-primary leading-[1.3] pb-6 max-w-4xl mx-auto">
               {project.title}
             </h1>
             <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto">
@@ -53,7 +53,7 @@ const ProjeDetay = () => {
                   <div className="h-14 w-14 rounded-2xl gradient-primary flex items-center justify-center shadow-glow-blue">
                     <Target className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-2xl md:text-3xl">Zorluklar ve Sorunlar</CardTitle>
+                  <CardTitle className="text-2xl md:text-3xl leading-tight">Zorluklar ve Sorunlar</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -68,7 +68,7 @@ const ProjeDetay = () => {
                   <div className="h-14 w-14 rounded-2xl gradient-accent flex items-center justify-center shadow-glow-orange">
                     <Lightbulb className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-2xl md:text-3xl">Çözümler ve Yaklaşımlar</CardTitle>
+                  <CardTitle className="text-2xl md:text-3xl leading-tight">Çözümler ve Yaklaşımlar</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -83,7 +83,7 @@ const ProjeDetay = () => {
                   <div className="h-14 w-14 rounded-2xl gradient-primary flex items-center justify-center shadow-glow-blue">
                     <Wrench className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-2xl md:text-3xl">Kullanılan Teknolojiler</CardTitle>
+                  <CardTitle className="text-2xl md:text-3xl leading-tight">Kullanılan Teknolojiler</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
@@ -104,7 +104,7 @@ const ProjeDetay = () => {
                   <div className="h-14 w-14 rounded-2xl gradient-accent flex items-center justify-center shadow-glow-orange">
                     <TrendingUp className="w-7 h-7 text-white" />
                   </div>
-                  <CardTitle className="text-2xl md:text-3xl">Sonuçlar ve Etkiler</CardTitle>
+                  <CardTitle className="text-2xl md:text-3xl leading-tight">Sonuçlar ve Etkiler</CardTitle>
                 </div>
               </CardHeader>
               <CardContent>
