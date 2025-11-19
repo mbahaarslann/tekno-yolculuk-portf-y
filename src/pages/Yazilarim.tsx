@@ -26,7 +26,7 @@ const Yazilarim = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect border border-accent/20 mb-6">
               <span className="text-sm font-semibold text-accent">Blog</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-text-accent">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-text-accent leading-[1.3] pb-6">
               Yazılarım
             </h1>
             <div className="h-1 w-24 mx-auto gradient-accent rounded-full mb-6" />
